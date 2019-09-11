@@ -1,0 +1,68 @@
+.widget {
+    border: 1px solid $silver;
+    margin-bottom: rem(20px);
+    background: $white;
+
+    &__header {
+        border-bottom: 1px solid $silver;
+        padding: rem(17px) rem(23px) rem(18px);
+        position: relative;
+    }
+    &__title {
+        font-family: $font-family-glyphs;
+        font-size: rem(20px);
+        line-height: 0.8;
+        margin: 0;
+    }
+    &__clipper {
+        height: 500px;
+    }
+    &__controls {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0 20px;
+        line-height: 36px;
+    }
+    &__settings {
+        @include btn-unstyled();
+        padding: 5px;
+        margin-left: 15px;
+        color: $gray-600;
+
+        &:hover {
+            color: $red;
+        }
+    }
+    &__link {
+        @extend .text-style-1;
+        color: $gray-600;
+
+        &:hover {
+            text-decoration: none;
+            color: $red;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        border-left: none;
+        border-right: none;
+
+        &__link {
+            display: none;
+        }
+        &__clipper {
+            height: 120vmin;
+        }
+    }
+}
+.widgets-col {
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+    }
+}
+.widgets-row {
+    @include media-breakpoint-down(sm) {
+        margin: 0;
+    }
+}

@@ -1,0 +1,262 @@
+.journal {
+    background: $white;
+    border: 1px solid $silver;
+    margin-bottom: rem(20px);
+
+    &-panel {
+        display: flex;
+        padding: 15px 20px 14px;
+        line-height: 1;
+        border-bottom: 1px solid $silver;
+        font-weight: bold;
+        font-family: $font-family-glyphs;
+
+        &__day {
+            font-size: rem(20px);
+            margin-right: 20px;
+        }
+
+        &__date {
+            font-size: rem(20px);
+            color: $gray-500;
+        }
+
+        @include media-breakpoint-down(sm) {
+            border-bottom: none;
+        }
+    }
+
+    &__header {
+        border-bottom: 1px solid $silver;
+        margin-bottom: -6px;
+
+        .journal__row {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__body {
+        padding-top: 6px;
+        @include media-breakpoint-down(sm) {
+            display: flex;
+            padding-top: 0;
+            padding-bottom: 3px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        border-bottom: 1px solid $silver;
+
+        &:last-child:not(:first-child) {
+            border-bottom: none;
+
+            @include media-breakpoint-down(sm) {
+                border-right: none;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            width: 287px;
+            min-width: 287px;
+            flex-wrap: wrap;
+            border-right: 1px solid $silver;
+            border-bottom: none;
+        }
+    }
+
+    &__col {
+        position: relative;
+        border-right: 1px solid $silver;
+        display: flex;
+        align-items: center;
+
+        &:nth-child(1) {
+            width: rem(121px);
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+            width: rem(182px);
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+
+        &:nth-child(3) {
+            flex: 1;
+            min-width: 0;
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                min-width: 100%;
+            }
+        }
+
+        &:nth-child(4) {
+            width: rem(146px);
+            border-right: none;
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            border: none;
+        }
+    }
+
+    .lesson-header {
+        padding: 9px 20px 8px;
+        width: 100%;
+
+        @include media-breakpoint-down(sm) {
+            display: flex;
+            border-bottom: 1px solid $silver;
+            padding: 6px 16px 4px;
+        }
+    }
+
+    .lesson-header b {
+        margin: 0;
+
+        @include media-breakpoint-down(sm) {
+            margin-right: 16px;
+        }
+    }
+
+    &__lesson-name {
+        font-size: rem(16px);
+        line-height: 1.13;
+        font-weight: bold;
+        font-family: $font-family-glyphs;
+        padding: 0 20px;
+
+        @include media-breakpoint-down(sm) {
+            padding: 15px 16px 12px;
+        }
+    }
+
+    &__home-work {
+        position: relative;
+        height: 62px;
+        width: 100%;
+        padding: 0 62px 0 20px;
+        margin: 7px 0 4px;
+        display: flex;
+        align-items: center;
+
+        @include media-breakpoint-down(md) {
+            padding: 0 46px 0 20px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin: 0 0 14px;
+            padding: 0 46px 0 16px;
+        }
+    }
+
+    &__home-work__text {
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        min-width: 0;
+        font-size: rem(16px);
+        line-height: 17px;
+        color: $gray-700;
+        overflow: hidden;
+        max-height: 51px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__home-work__link {
+        position: absolute;
+        top: 50%;
+        right: 31px;
+        transform: translate(50%, -50%);
+        color: $gray-600;
+
+        @include media-breakpoint-down(md) {
+            right: 23px;
+        }
+    }
+
+    &__rating {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .lesson-header {
+            width: 128px;
+            min-width: 128px;
+            height: 100%;
+            border-bottom: none;
+            border-right: 1px solid $silver;
+            align-items: center;
+        }
+
+        @include media-breakpoint-down(sm) {
+            border-top: 1px solid $silver;
+        }
+    }
+
+    &__rating-item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-grow: 1;
+        flex: 1;
+        font-size: rem(32px);
+        color: $red;
+        border-right: 1px solid $silver;
+
+        &:last-child {
+            border: none;
+        }
+
+        .icon-home {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            color: $gray-600;
+            transform: translate(2px, 0);
+        }
+
+        .icon-info {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(0, -6px);
+            color: $gray-600;
+
+            .red-xs {
+                @include media-breakpoint-down(sm) {
+                    color: $red;
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+                transform: translate(0, -11px);
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            line-height: 52px;
+        }
+    }
+}

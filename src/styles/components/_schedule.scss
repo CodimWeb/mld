@@ -1,0 +1,178 @@
+.schedule-nav {
+    margin-bottom: rem(20px);
+    border: 1px solid $silver;
+    display: flex;
+    background: $white;
+
+    &__control {
+        display: flex;
+        height: 52px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    &__btn {
+        @include btn-unstyled();
+        padding: 0 20px;
+        height: 100%;
+        color: $gray-500;
+        font-size: 12px;
+
+        &:hover {
+            color: $dark;
+        }
+    }
+    &__week {
+        font-size: rem(20px);
+        font-weight: bold;
+        font-family: $font-family-glyphs;
+        line-height: 0.8;
+        width: rem(102px);
+        text-align: center;
+    }
+    &__list {
+        display: flex;
+        height: 52px;
+        width: 100%;
+    }
+    &__link {
+        @extend .text-style-1;
+        display: block;
+        width: 100%;
+        border-left: 1px solid $silver;
+        padding: 15px 0 0 20px;
+        line-height: 1.3;
+        color: $dark;
+        transition: $def-trans-color, $def-trans-bg;
+
+        &:hover {
+            text-decoration: none;
+            color: darken($dark, 20%);
+            background: $gray-100;
+        }
+        &--current {
+            background: $red;
+            color: $white;
+            border-color: $red;
+
+            &:hover {
+                color: $white;
+                background: $red;
+            }
+        }
+
+    }
+
+    @include media-breakpoint-down(md) {
+        overflow-x: auto;
+
+        &__control {
+            display: none;
+        }
+        &__link {
+            min-width: rem(122px);
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        border-right: none;
+        border-left: none;
+    }
+}
+.schedule-table {
+    width: 100%;
+    border-spacing: 0;
+    table-layout: fixed;
+
+    th, td {
+        border: 1px solid $silver;
+        padding: 0;
+
+        &:first-child {
+            border-left: none;
+        }
+        &:last-child {
+            border-right: none;
+        }
+    }
+    thead {
+        tr {
+            &:first-child {
+                th, td {
+                    border-top: none;
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            &:last-child {
+                th, td {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        th, td {
+            min-width: rem(180px);
+        }
+    }
+}
+.lesson-header {
+    font-size: rem(10px);
+    text-transform: uppercase;
+    padding: 9px 24px 8px;
+    color: $gray-500;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+
+    b {
+        margin-right: rem(20px);
+    }
+}
+.lesson-info {
+    padding: rem(10px) rem(20px) rem(18px);
+    line-height: 1.25;
+    position: relative;
+
+    &__name {
+        font-family: $font-family-glyphs;
+        font-weight: bold;
+        margin-bottom: rem(17px);
+    }
+    &__item {
+        margin-bottom: rem(12px);
+    }
+    &__status {
+        @extend .text-style-1;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: rem(8px);
+            height: rem(8px);
+            border-radius: 50%;
+            background: $green;
+            margin-right: rem(10px);
+        }
+        &--danger {
+            &::before {
+                background: $red;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        min-height: 310px;
+
+        &__status {
+            position: absolute;
+            bottom: rem(20px);
+            left: rem(20px);
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        &__status {
+            margin-top: rem(16px);
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.classmates-list {
+    height: 500px;
+}
+
+.classmate {
+    padding: rem(10px) rem(20px);
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &__avatar {
+        width: rem(70px);
+        height: rem(70px);
+        border-radius: 50%;
+    }
+    &__left {
+        padding-right: 20px;
+    }
+    &__name-link {
+        font-family: $font-family-glyphs;
+        color: $dark;
+        font-weight: bold;
+        line-height: 1.25;
+
+        &:hover {
+            text-decoration: none;
+            color: $red;
+        }
+    }
+    &__message-link {
+        @extend .text-style-1;
+        color: $gray-600;
+
+        &:hover {
+            text-decoration: none;
+            color: $red;
+        }
+    }
+    .ui-menu {
+        position: absolute;
+        right: 10px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &__avatar {
+            width: rem(50px);
+            height: rem(50px);
+        }
+        &__left {
+            padding-right: rem(10px);
+        }
+    }
+}

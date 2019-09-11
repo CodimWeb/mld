@@ -1,0 +1,83 @@
+.events-list {
+    height: 518px;
+
+    @media (max-width: 1460px) {
+        height: 483px;
+    }
+
+    @include media-breakpoint-down(md) {
+        height: auto;
+    }
+}   
+.event-item {
+    display: flex;
+    padding: 15px 20px;
+    color: $dark;
+    position: relative;
+
+    &:hover {
+        text-decoration: none;
+        color: $dark;
+        background: $gray-100;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        right: rem(19px);
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background: $silver;
+    }
+    &:last-child::after {
+        display: none;
+    }
+    &__left {
+        width: 400px;
+    }
+    &__right {
+        padding-left: 9px;
+    }
+    &__name {
+        display: block;
+        line-height: 1.25;
+    }
+    &__status {
+        @extend .text-style-2;
+        color: $gray-500;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            margin-right: 5px;
+            width: 8px;
+            height: 8px;
+            background: $gray-500;
+            border-radius: 50%;
+        }
+        &--red {
+            &::before {
+                background: $red;
+            }
+        }
+        &--green {
+            &::before {
+                background: $green;
+            }
+        }
+    }
+    &__time,
+    &__date {
+        @extend .text-style-1;
+        display: block;
+    }
+    &__date {
+        margin: 7px 0 12px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &::after {
+            right: 0;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+.app {
+    background: $gray-50;
+
+    &.layout-auth {
+        background: $white;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 500px;
+            background: url(assets/login-bg.jpg) right center no-repeat;
+            background-size: cover;
+        }
+        .global-container {
+            border: none;
+        }
+        .main {
+            padding: 60px 80px 40px;
+        }
+    }
+}
+.global-container {
+    width: 1440px;
+    margin: 0 auto;
+    border-bottom: none;
+    min-height: 100vh;
+
+    @media (max-width: 1460px) {
+        width: 1300px;
+    }
+    @media (max-width: 1320px) {
+        width: 100%;
+    }
+    @media (min-width: 1321px) {
+        border: 1px solid $silver;
+        border-top: none;
+    }
+}
+.main {
+    padding: 80px 50px 100px 290px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 240px;
+        background: $white;
+        border-right: 1px solid $silver;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+    @media (max-width: 1320px) {
+        padding-left: 50px;
+    }
+    @include media-breakpoint-down(sm) {
+        padding: 64px 0 50px;
+    }
+}
+.main-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__btn {
+        @include btn-unstyled();
+        @extend .text-style-1;
+        color: $dark;
+        padding: 10px 0;
+        margin-right: 50px;
+        transition: $def-trans-color;
+        vertical-align: middle;
+
+        &:hover {
+            color: $red;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        .svg-icon {
+            font-size: rem(18px);
+            margin-right: rem(10px);
+            vertical-align: text-bottom;
+        }
+    }
+    @include media-breakpoint-down(md) {
+        &__buttons {
+            display: none;
+        }
+    }
+}
+.banner {
+    margin-bottom: rem(20px);
+
+    &__img {
+        display: block;
+        width: 100%;
+    }
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+.ui-menu {
+    &__toggle {
+        color: $gray-600;
+        transition: $def-trans-color;
+        cursor: pointer;
+        padding: 10px;
+
+        &:hover {
+            color: $dark;
+        }
+    }
+    &__inner {
+        position: absolute;
+        display: none;
+    }
+    &:hover {
+        .ui-menu__inner {
+            //display: block;
+        }
+    }
+}
+.table-scroller {
+    @include media-breakpoint-down(md) {
+        position: relative;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+
+        table {
+            width: auto;
+        }
+    }
+}

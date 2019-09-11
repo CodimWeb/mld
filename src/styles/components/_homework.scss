@@ -1,0 +1,19 @@
+.pass-homework {
+    &__body {
+        height: 500px;
+        background: url("assets/pass-homework-bg.png") left bottom no-repeat;
+        background-size: 100% auto;
+        padding-top: 103px;
+        text-align: center;
+    }
+    &__btn {
+        font-family: $font-family-glyphs;
+        line-height: 0.8;
+    }
+
+    @include media-breakpoint-down(sm) {
+        &__body {
+            height: 120vmin;
+        }
+    }
+}

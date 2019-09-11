@@ -1,0 +1,45 @@
+.custom-tabs {
+    .nav-tabs {
+        border: none;
+        padding: rem(10px) rem(30px);
+
+        .nav-item {
+            margin-left: rem(30px);
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        .nav-link {
+            font-family: $font-family-glyphs;
+            border: none;
+            color: $gray-600;
+            font-weight: bold;
+            line-height: 1;
+            text-transform: uppercase;
+            position: relative;
+            padding: 10px 0;
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                background: transparent;
+                transform: scaleX(0);
+                transition: $def-trans-bg, $def-trans-transform;
+            }
+        }
+        .nav-link.active {
+            color: $primary;
+            background: transparent;
+
+            &::after {
+                background: $primary;
+                transform: scaleX(1)
+            }
+        }
+    }
+}

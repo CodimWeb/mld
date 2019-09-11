@@ -1,0 +1,24 @@
+.login-page {
+    &__logo {
+        display: block;
+        position: absolute;
+        top: 40px;
+        right: 500px;
+        margin-right: rem(-140px);
+        width: rem(280px);
+        height: rem(88px);
+        text-indent: -1000px;
+        background: url(assets/logo1.png) $white center no-repeat;
+        background-size: rem(240px) rem(48px);
+        z-index: 1;
+    }
+    &__title {
+        margin-bottom: rem(118px);
+    }
+    &__btn {
+        @extend .text-style-3;
+    }
+    &__form {
+        width: 440px;
+    }
+}
